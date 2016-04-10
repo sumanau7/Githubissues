@@ -1,0 +1,41 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <title>Shippable Github Assignment</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Github Repo Info</h1>
+    <td><input class="form-control" ng-model="repo.url"></td>
+<br>
+    <td><button class="btn btn-primary" ng-click="getRepoIssues()">Get Info</button></td>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Open Issues</th>
+          <th>Open Issues (Last 24 hours)</th>
+          <th>Open Issues (> 24 hours and < 7days)</th>
+          <th>Open Issues (> 7days)</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ repo.open_issues_count }}</td>
+          <td>{{ repo.open_issues_count_last_24_hr }}</td>
+          <td>{{ repo.open_issues_count_last_24_hr_7_days }}</td>
+          <td>{{ repo.open_issues_count_7_days }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
